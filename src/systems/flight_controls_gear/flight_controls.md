@@ -14,6 +14,11 @@ rudder pedals. Secondary controls are
 [trailing edge flaps](./flight_controls.md#slats-flap-system),
 and wing mounted [speed brakes](./flight_controls.md#speed-brakes).
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EXsTlmokAlQ?si=QZfuCaOXcLmS9g1Z"
+title="F-0005 Flight Control Systems for the F-4" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Bobweights vs. Bellows
 
 Linkages between stick, control surfaces and interactions with the trim system,
@@ -33,7 +38,7 @@ fin.
 ![Bellows Inlet](../../img/ext_f4_anti_col_light.jpg)
 
 The bellows pull the stick aft depending on the relative airspeed.
-For example, when going hands of stick and the aircraft unintentionally departing
+For example, when going hands off stick and the aircraft unintentionally departing
 nose down, airspeed increases and the bellows system pulls the stick aft, naturally
 causing the aircraft to pitch up and stabilize in level flight again.
 
@@ -170,6 +175,11 @@ operation, **stability augmentation** and **AFCS**.
 > 💡 The term "AFCS" is the name of the whole system but also
 > its sub-mode in which the aircraft attitude and/or heading
 > is held and altitude hold can be activated.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4ubA7UuQ5vw?si=Ga5Ym_cnLGLzJiy2"
+title="DCS: F-4E Automatic Flight Control System (AFCS) Tutorial" frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 **Stability augmentation** improves airplane stability in pitch, roll,
 and yaw. It opposes any change of attitude but does not

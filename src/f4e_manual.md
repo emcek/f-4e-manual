@@ -15,8 +15,10 @@
 7. [Normal Procedures](procedures/overview.md)
 8. [Emergency Procedures](emergency_procedures/overwiew.md)
 9. [DCS](dcs/overview.md)
-10. [Abbreviations](abbreviations.md)
-11. [Imprint](imprint.md)
+10. [MSFS](msfs/overview.md)
+11. [Links](links/links.md)
+12. [Abbreviations](abbreviations.md)
+13. [Imprint](imprint.md)
 
 <!-- markdown-link-check-disable -->
 
@@ -24,6 +26,10 @@ This document is available [online](https://f4.manuals.heatblur.se/), as
 [PDF version](https://github.com/Heatblur-Simulations/f-4e-manual/releases),
 embedded in-game as offline website and can be contributed to as open-source
 project at [GitHub](https://github.com/Heatblur-Simulations/f-4e-manual).
+
+> 💡 This manual provides comprehensive details on the F-4E Phantom. For a more
+> hands-on approach it is recommended to check out
+> [Chuck's Guide](https://chucksguides.com/aircraft/dcs/f-4e/) as well.
 
 <!-- markdown-link-check-enable -->
 

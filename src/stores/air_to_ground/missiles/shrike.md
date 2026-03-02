@@ -44,7 +44,7 @@ Before any AGM-45 Shrike can be employed a few things have to be set in the cock
 ### AGM-45 (WRCS Mode)
 
 Used only with the AGM-45 in conjunction with the WRCS, this mode is the primary means of employment
-of the Shrike. The mode is based around a high altitude attack profile, and depends on the
+of the Shrike. The mode is based around a high altitude employment profile, and depends on the
 pre-programmed weapon engagement envelope of the AGM-45 stored within the WRCS. This profile, in
 conjunction with current aircraft state information from the INS and a signal provided by the
 receiver in the missile - having detecting an emitter of the type its attuned to, define a flight
@@ -105,11 +105,46 @@ current state for best chance of missile success.
 
 #### WRCS AGM-45 Employment
 
-> 💡The WRCS mode is currently WIP and will the employment will be described once it is ready
+To effectively employ the AGM-45 Shrike in WRCS mode, begin by selecting AGM-45 as the delivery mode
+using the delivery mode knob. With the delivery mode configured, arm the hardpoint carrying the
+Shrike missile by pressing the corresponding Station Select Button. This action activates the
+missile’s onboard receiver, which begins scanning for emitters that match its pre-programmed
+parameters.
+
+Once the missile’s receiver detects a matching emitter, the WRCS begins calculating the optimal
+flight path and release envelope. This process relies on real-time data from the missile’s receiver
+and the aircraft’s INS, ensuring precise guidance. Confirm that emitter lock has been achieved by
+checking the relevant cockpit indicators before proceeding with the attack.
+
+Follow the WRCS-provided guidance carefully, using the ADI needles to adjust your orientation and
+the HSI and BDHI to monitor horizontal range to the target. As the aircraft aligns with the
+calculated trajectory, watch for one of the indexer lights to illuminate. Each light corresponds to
+a specific release maneuver:
+
+- If the Pull-up Light illuminates, begin a steady pull-up maneuver to meet the release parameters.
+  Rotate the aircraft smoothly back toward the horizon and, if necessary, continue into a shallow
+  climb profile.
+
+- If the Dive Light illuminates, initiate a controlled dive toward the target. This typically occurs
+  when the attack is initiated close to the target, so ensure you are prepared to commit quickly, as
+  proximity to the emitter increases the risk of enemy retaliation.
+
+- The Level Light indicates that the aircraft is in the correct orientation for missile release. In
+  some cases, this light may illuminate immediately or shortly after another maneuver, confirming
+  that you are ready for launch.
+
+When the conditions are correct and the indexer light confirms the appropriate release profile,
+press and hold the Bomb Release Button to initiate the missile launch sequence. Maintain the
+aircraft’s orientation as instructed until the Shrike is released from the hardpoint.
+
+One key consideration when employing the Shrike is that its success depends on the emitter remaining
+active. If the target emitter ceases operation, the missile may lose guidance and fail to reach its
+target. As such, timing and situational awareness are essential, especially when multiple missiles
+are deployed.
 
 ### Loft
 
-The Loft attack profile of the Shrike is like a loft bombing attack, utilizing the weapon lookup
+The Loft employment profile of the Shrike is like a loft bombing attack, utilizing the weapon lookup
 tables to define a suitable IP to release distance, the necessary release angle, and the time from
 IP to pull-up is determined by the lookup table speed versus the IP to release distance.
 
@@ -133,9 +168,7 @@ same for the AGM-45 Shrike_
 #### LABS Loft Employment
 
 This mode works exactly the same as it would for bombs so pre-planning is necessary. Select an IP
-calculate the timers and fly the same attack profile as for Loft bombing. Note that in this mode the
-Loft seeker of the AGM-45 Shrike needs to sense a differential pressure of 1 Bar and needs to sense
-a barometric height of over 18,000ft to arm itself and start searching.
+calculate the timers and fly the same employment profile as for Loft bombing.
 
 ### Direct Mode
 
@@ -156,6 +189,44 @@ release button. The Shrike will fire within one second after pressing the bomb r
 aware that the Shrike will have the least amount of range in direct mode and should be fired very
 near to the target. A dive angle of 20 degree or more is recommended.
 
+### Attack Profiles
+
+The missile itself can be configured for two different attack profiles called _Loft Attack_ and
+_Direct Attack_ (not to be confused with the employment profiles available to employ them).
+
+These control when the missile's guidance will initiate after launch.
+
+> 💡 Selection of the improper attack profile might cause the AGM-45 to miss the target due to lack
+> of energy (ex: the bang-bang guidance activating too early) or overshooting the target (ex:
+> guidance doesn't enable in time).
+
+#### Loft Attack
+
+With _Loft Attack_, the guidance will initiate when the missile's barometric altimeter detects that:
+
+- There is a pressure increase of 1 psi
+- The missile is below 18,000ft MSL.
+
+> 💡 A pressure increase of 1 psi is roughly a decrease in altitude of 1000-3000ft.
+
+This prevents unnecessary loss of energy due to the bang-bang guidance method of the weapon.
+
+Selection of the _Loft Attack_ attack profile is strongly recommended when employing the Shrike in
+the (WRCS) AGM-45 and (LABS) LOFT modes.
+
+> 💡 Loft Attack can often be utilized to engage short-range and medium-range SAM systems outside of
+> their engagement range.
+
+#### Direct Attack
+
+With _Direct Attack_, guidance will initiate approximately 3 seconds after launch, allowing the
+missile to maneuver towards the target emitter almost immediately after launch.
+
+Selection of the _Direct Attack_ attack profile is only preferred when using the (WRCS) DIRECT mode.
+
+> 💡 _Direct Attack_ can be utilized when engaging SAM systems during a quick low level popup
+> attack.
+
 ### Seeker Heads
 
 The AGM-45 has 10 seeker heads, which each target a specific emitter radio frequency, to select
@@ -163,7 +234,7 @@ from. This means some preparation is required prior to flight in order to be pro
 engage the threats effectively. The following seeker heads tables are provided so your missions can
 be planned accordingly.
 
-> 💡 This seeker head data was last updated for 2.9.7.59263.
+<!-- This seeker head data is accurate as of patch 2.9.21 -->
 
 #### Seeker RF Limit Table
 
@@ -187,22 +258,26 @@ General Key:
 - STR: Search and Tracking Radar
 - RF: Rangefinder
 
+> 💡 For the tables below, the radars that are not within parenthesis means that they DO NOT provide
+> tone and needles but missile still track the specified radar. If the radar is within parenthesis,
+> they DO provide tone and needles as well as track the specified radar.
+
 #### Land-based Threats
 
 ##### Warsaw Pact land-based SAM and EWR system radars
 
-| Seeker       | SA-2  | SA-3 | SA-5  | SA-6  | SA-8 | SA-10 | SA-11 | SA-13 | SA-15 | SA-19 | EWR |
-| ------------ | :---: | :--: | :---: | :---: | :--: | :---: | :---: | :---: | :---: | :---: | :-: |
-| Mk 22        | TR/RF |      |  TR   | SR/TR |      |       |       |  TR   | SR/TR |       | DE  |
-| Mk 23        | TR/RF |      |  TS   |       |      | TS/BB |       |  TR   |       | SR/TR |     |
-| Mk 24 Mod 5  | TR/RF |      |  TS   |       |      |  TS   |       |  TR   |       | SR/TR |     |
-| Mk 24 Mod 34 | TR/RF |      |  TS   |       |      |  TS   |       |  TR   |       |       |     |
-| Mk 25        | TR/RF |      |  TR   | SR/TR |      |       |       |  TR   | SR/TR |       | DE  |
-| Mk 36        | TR/RF |  TR  |  TR   |  TR   |      | CS/TR | SR/TR |  TR   |       |       |     |
-| Mk 37        | FF/RF |  FF  | FF/TR |       |      |       |       |  TR   |       |       |     |
-| Mk 49 Mod 0  | TR/RF |  TR  |  TR   |  TR   | STR  |  CS   | SR/TR |  TR   |       |       |     |
-| Mk 49 Mod 1  | TR/RF |  TR  |  TR   |  TR   | STR  |  CS   | SR/TR |  TR   |       |       |     |
-| Mk 50        | TR/RF |      | TS/TR |       |      | TS/BB |       |  TR   |       | SR/TR | DE  |
+| Seeker       |  SA-2   | SA-3 | SA-5 |   SA-6    | SA-8 |    SA-10     | SA-11 | SA-13 | SA-15 (Tor-M1) | SA-15 (Tor-M2) | SA-19 | SA-22 | EWR  |
+| ------------ | :-----: | :--: | :--: | :-------: | :--: | :----------: | :---: | :---: | :------------: | :------------: | :---: | :---: | :--: |
+| Mk 22        | (TR)/RF |      |      |           |      |              |       | (TR)  |       TR       |                |       |       | (DE) |
+| Mk 23        |   RF    |      | (TS) |           |      | (TS)/(BB)/CS |  SR   |  TR   |      (SR)      |      (SR)      | (SR)  | (SR)  |      |
+| Mk 24 Mod 5  |   RF    |      | (TS) |           |      |     (TS)     |       |  TR   |                |       SR       |  SR   |  SR   |      |
+| Mk 24 Mod 34 |   RF    |      | (TS) |           |      | (TS)/(BB)/CS |       |  TR   |                |      (SR)      |  SR   | (SR)  |      |
+| Mk 25        | (TR)/RF |      |      |           |      |              |       | (TR)  |       TR       |                |       |       | (DE) |
+| Mk 36        |   RF    | (TR) |      |  SR/(TR)  |      |      TR      | (TR)  |  TR   |                |                |       |  TR   |      |
+| Mk 37        | (FF)/RF | (FF) | (FF) |           |      |              |       |  TR   |                |                |       |       |      |
+| Mk 49 Mod 0  |   RF    | (TR) | (TR) | (SR)/(TR) | (SR) |     (TR)     | (TR)  |  TR   |                |                |       |  TR   |      |
+| Mk 49 Mod 1  |   RF    | (TR) | (TR) | (SR)/(TR) | (SR) |     (TR)     | (TR)  |  TR   |                |                |       |  TR   |      |
+| Mk 50        | (TR)/RF |      | (TS) |           |      | (TS)/(BB)/CS |  SR   | (TR)  |   (SR)/(TR)    |      (SR)      | (SR)  | (SR)  | (DE) |
 
 > 💡 The SA-2/3/5 all can use the same Flat Face search radar with the SA-5 having the option of
 > using the Tin Shield as a search radar as well.
@@ -218,45 +293,45 @@ General Key:
 | Seeker       | CH-SA-4 (HQ-7) |
 | ------------ | :------------: |
 | Mk 22        |                |
-| Mk 23        |                |
-| Mk 24 Mod 5  |                |
+| Mk 23        |      (SR)      |
+| Mk 24 Mod 5  |       SR       |
 | Mk 24 Mod 34 |                |
 | Mk 25        |                |
-| Mk 36        |     SR/TR      |
+| Mk 36        |                |
 | Mk 37        |                |
-| Mk 49 Mod 0  |     SR/TR      |
-| Mk 49 Mod 1  |     SR/TR      |
-| Mk 50        |                |
+| Mk 49 Mod 0  |                |
+| Mk 49 Mod 1  |                |
+| Mk 50        |      (SR)      |
 
 ##### Combined NATO and Warsaw Pact Anti-Aircraft Artillery (AAA) radars
 
 | Seeker       | Shilka | Fire Can | Gepard | M163 VADS | C-RAM |
 | ------------ | :----: | :------: | :----: | :-------: | ----- |
 | Mk 22        |        |    TR    |        |           |       |
-| Mk 23        |        |    TR    | SR/TR  |           |       |
-| Mk 24 Mod 5  |        |    TR    | SR/TR  |           |       |
-| Mk 24 Mod 34 |        |    TR    |        |           |       |
+| Mk 23        |        |   (TR)   |   SR   |           |       |
+| Mk 24 Mod 5  |        |   (TR)   |   SR   |           |       |
+| Mk 24 Mod 34 |        |   (TR)   |        |           |       |
 | Mk 25        |        |    TR    |        |           |       |
 | Mk 36        |        |    TR    |        |           |       |
 | Mk 37        |        |    TR    |        |           |       |
 | Mk 49 Mod 0  |        |    TR    |        |           |       |
 | Mk 49 Mod 1  |        |    TR    |        |           |       |
-| Mk 50        |        |    TR    |   TR   |           |       |
+| Mk 50        |        |   (TR)   |   SR   |           |       |
 
 ##### NATO land-based SAM system radars and EWRs
 
-| Seeker       | Hawk | Patriot | Rapier | Roland | NASAMS |
-| ------------ | :--: | :-----: | :----: | :----: | :----: |
-| Mk 22        |      |   STR   |   TR   |        |        |
-| Mk 23        |      |         |   TR   |        |        |
-| Mk 24 Mod 5  |      |         |   TR   |        |        |
-| Mk 24 Mod 34 |      |         |   TR   |        |        |
-| Mk 25        |      |   STR   |   TR   |        |        |
-| Mk 36        |  TR  |         |   TR   |   TR   |   SR   |
-| Mk 37        |  SR  |         |   TR   |        |        |
-| Mk 49 Mod 0  |      |         |   TR   |        |        |
-| Mk 49 Mod 1  |      |         |   TR   |        |        |
-| Mk 50        |      |   STR   |   TR   |        |        |
+| Seeker       | Hawk | Patriot | Rapier | Roland | NASAMS | IRIS-T SLM |
+| ------------ | :--: | :-----: | :----: | :----: | :----: | :--------: |
+| Mk 22        |      |   STR   |        |        |        |    STR     |
+| Mk 23        |      |         |        |        |        |            |
+| Mk 24 Mod 5  |      |         |        |        |        |            |
+| Mk 24 Mod 34 |      |         |        |        |        |            |
+| Mk 25        |      |   STR   |        |        |        |   (STR)    |
+| Mk 36        |  TR  |         |        |   TR   |  (SR)  |            |
+| Mk 37        |  SR  |         |        |        |        |            |
+| Mk 49 Mod 0  |      |         |        |        |        |            |
+| Mk 49 Mod 1  |      |         |        |        |        |            |
+| Mk 50        |      |   STR   |        |        |        |   (STR)    |
 
 #### Naval Threats
 
@@ -264,75 +339,75 @@ General Key:
 
 ##### Soviet Naval Threats
 
-| Seeker       | Kirov | Slava | Kuznetsov | Molniya | Grisha | Krivak | Neustrashimy | Ropucha |
-| ------------ | :---: | :---: | :-------: | :-----: | :----: | :----: | :----------: | :-----: |
-| Mk 22        |  TR   |  TR   |    TR     |         |   TR   |   TR   |      TR      |         |
-| Mk 23        | SR/TR | SR/TR |   SR/TR   |  SR/TR  |   TR   |   TR   |    SR/TR     |         |
-| Mk 24 Mod 5  | SR/TR |  TR   |   SR/TR   |  SR/TR  |   TR   |   TR   |    SR/TR     |         |
-| Mk 24 Mod 34 |  TR   |  TR   |    TR     |         |   TR   |   TR   |      TR      |         |
-| Mk 25        |  TR   |  TR   |    TR     |         |   TR   |   TR   |      TR      |         |
-| Mk 36        | SR/TR | SR/TR |   SR/TR   |  SR/TR  |   TR   |   TR   |    SR/TR     |         |
-| Mk 37        |  TR   |  TR   |    TR     |         |   TR   |   TR   |      TR      |         |
-| Mk 49 Mod 0  |  TR   |  TR   |    TR     |         | SR/TR  | SR/TR  |      TR      |         |
-| Mk 49 Mod 1  |  TR   |  TR   |    TR     |         | SR/TR  | SR/TR  |      TR      |         |
-| Mk 50        | SR/TR | SR/TR |   SR/TR   |  SR/TR  |   TR   |   TR   |    SR/TR     |         |
+| Seeker       |   Kirov   |   Slava   | Kuznetsov | Molniya |  Grisha   |  Krivak   | Neustrashimy | Ropucha | Project 22160 | Project 22160 with Tor-M2M |
+| ------------ | :-------: | :-------: | :-------: | :-----: | :-------: | :-------: | :----------: | :-----: | :-----------: | :------------------------: |
+| Mk 22        |    TR     |   (TR)    |    TR     |         |    TR     |    TR     |     (TR)     |         |               |                            |
+| Mk 23        | (SR)/(TR) | (SR)/(TR) | (SR)/(TR) |  SR/TR  |   (TR)    |   (TR)    |  (SR)/(TR)   |  (SR)   |               |             SR             |
+| Mk 24 Mod 5  |   SR/TR   |    TR     |   SR/TR   |  SR/TR  |    TR     |   (TR)    |  (SR)/(TR)   |         |               |             SR             |
+| Mk 24 Mod 34 |   (TR)    |   (TR)    |   (TR)    |         |    TR     |   (TR)    |      TR      |         |               |             SR             |
+| Mk 25        |    TR     |    TR     |    TR     |         |    TR     |    TR     |      TR      |         |               |                            |
+| Mk 36        | (SR)/(TR) | (SR)/(TR) | (SR)/(TR) |  SR/TR  |    TR     |   (TR)    |  (SR)/(TR)   |   SR    |    (SR)/TR    |          (SR)/TR           |
+| Mk 37        |    TR     |    TR     |    TR     |         |    TR     |    TR     |      TR      |         |               |                            |
+| Mk 49 Mod 0  |   (TR)    |   (TR)    |   (TR)    |         | (SR)/(TR) | (SR)/(TR) |     (TR)     |   SR    |   (SR)/(TR)   |         (SR)/(TR)          |
+| Mk 49 Mod 1  |   (TR)    |   (TR)    |   (TR)    |         | (SR)/(TR) | (SR)/(TR) |     (TR)     |   SR    |   (SR)/(TR)   |         (SR)/(TR)          |
+| Mk 50        | (SR)/(TR) | (SR)/(TR) | (SR)/(TR) |  SR/TR  |   (TR)    |   (TR)    |  (SR)/(TR)   |  (SR)   |               |             SR             |
 
 ##### Chinese Naval Threats
 
-| Seeker       | Type 052B | Type 052C | Type 054A | Type 071 |
-| ------------ | :-------: | :-------: | :-------: | :------: |
-| Mk 22        |    TR     |           |    TR     |          |
-| Mk 23        |   SR/TR   |   SR/TR   |   SR/TR   |          |
-| Mk 24 Mod 5  |    TR     |   SR/TR   |    TR     |          |
-| Mk 24 Mod 34 |    TR     |           |    TR     |          |
-| Mk 25        |    TR     |           |    TR     |          |
-| Mk 36        |   SR/TR   |   SR/TR   |   SR/TR   |          |
-| Mk 37        |    TR     |           |    TR     |          |
-| Mk 49 Mod 0  |    TR     |           |    TR     |          |
-| Mk 49 Mod 1  |    TR     |           |    TR     |          |
-| Mk 50        |   SR/TR   |   SR/TR   |   SR/TR   |          |
+| Seeker       | Type 052B | Type 052C | Type 054A | Type 071 | Type 021-1 |
+| ------------ | :-------: | :-------: | :-------: | :------: | :--------: |
+| Mk 22        |           |           |           |          |            |
+| Mk 23        |   (SR)    |   (SR)    |   (SR)    |          |     SR     |
+| Mk 24 Mod 5  |           |    SR     |           |          |     SR     |
+| Mk 24 Mod 34 |           |           |           |          |     SR     |
+| Mk 25        |           |           |           |          |            |
+| Mk 36        |    TR     |    SR     |    TR     |          |    (SR)    |
+| Mk 37        |           |           |           |          |            |
+| Mk 49 Mod 0  |   (TR)    |           |   (TR)    |          |            |
+| Mk 49 Mod 1  |   (TR)    |           |   (TR)    |          |            |
+| Mk 50        |   (SR)    |   (SR)    |   (SR)    |          |     SR     |
 
 ##### US Naval Threats
 
-| Seeker       | Ticonderoga | Arleigh Burke | Oliver Hazard Perry | Forrestal | Nimitz | Tarawa |
-| ------------ | :---------: | :-----------: | :-----------------: | :-------: | :----: | :----: |
-| Mk 22        |             |               |         TR          |           |   TR   |        |
-| Mk 23        |             |               |         TR          |           |   TR   |        |
-| Mk 24 Mod 5  |             |               |         TR          |           |   TR   |        |
-| Mk 24 Mod 34 |             |               |         TR          |           |   TR   |        |
-| Mk 25        |             |               |         TR          |           |   TR   |        |
-| Mk 36        |     TR      |      TR       |         TR          |           |   TR   |        |
-| Mk 37        |    SR/TR    |     SR/TR     |        SR/TR        |           |   TR   |        |
-| Mk 49 Mod 0  |             |               |         TR          |           |   TR   |        |
-| Mk 49 Mod 1  |             |               |         TR          |           |   TR   |        |
-| Mk 50        |             |               |         TR          |           |   TR   |        |
+| Seeker       | Ticonderoga | Arleigh Burke | Oliver Hazard Perry | Forrestal | Nimitz  | Tarawa |
+| ------------ | :---------: | :-----------: | :-----------------: | :-------: | :-----: | :----: |
+| Mk 22        |             |               |         TR          |           |   TR    |        |
+| Mk 23        |             |               |         TR          |   (SR)    | (SR)/TR |        |
+| Mk 24 Mod 5  |             |               |         TR          |   (SR)    | (SR)/TR |        |
+| Mk 24 Mod 34 |             |               |         TR          |   (SR)    | (SR)/TR |        |
+| Mk 25        |             |               |         TR          |   (SR)    |   TR    |        |
+| Mk 36        |    (TR)     |     (TR)      |         TR          |           |   TR    |        |
+| Mk 37        |  (SR)/(TR)  |     SR/TR     |        SR/TR        |           |  SR/TR  |        |
+| Mk 49 Mod 0  |             |               |        (TR)         |           |   TR    |        |
+| Mk 49 Mod 1  |             |               |        (TR)         |           |   TR    |        |
+| Mk 50        |             |               |         TR          |   (SR)    | (SR)/TR |        |
 
 ##### British Naval Threats
 
 | Seeker       | Leander | Castle | Invincible |
 | ------------ | :-----: | ------ | ---------- |
 | Mk 22        |   TR    |        |            |
-| Mk 23        |   TR    |        |            |
+| Mk 23        |  (TR)   |        |            |
 | Mk 24 Mod 5  |   TR    |        |            |
-| Mk 24 Mod 34 |   TR    |        |            |
+| Mk 24 Mod 34 |  (TR)   |        |            |
 | Mk 25        |   TR    |        |            |
-| Mk 36        |   TR    |        |            |
+| Mk 36        |  (TR)   |        |            |
 | Mk 37        |   TR    |        |            |
-| Mk 49 Mod 0  |   TR    |        |            |
-| Mk 49 Mod 1  |   TR    |        |            |
-| Mk 50        |   TR    |        |            |
+| Mk 49 Mod 0  |  (TR)   |        |            |
+| Mk 49 Mod 1  |  (TR)   |        |            |
+| Mk 50        |  (TR)   |        |            |
 
 ##### Other Naval Threats
 
-| Seeker       | Veinticinco de Mayo | Condell | Tiger |
-| ------------ | :-----------------: | :-----: | :---: |
-| Mk 22        |                     |         |       |
-| Mk 23        |        SR/TR        |         |       |
-| Mk 24 Mod 5  |                     |         |       |
-| Mk 24 Mod 34 |                     |         |       |
-| Mk 25        |                     |         |       |
-| Mk 36        |                     |         |       |
-| Mk 37        |                     |         |       |
-| Mk 49 Mod 0  |                     |         |       |
-| Mk 49 Mod 1  |                     |         |       |
-| Mk 50        |        SR/TR        |         |       |
+| Seeker       | Veinticinco de Mayo | Condell | Tiger/La Combattante IIa |
+| ------------ | :-----------------: | :-----: | :----------------------: |
+| Mk 22        |                     |         |                          |
+| Mk 23        |        (SR)         |         |                          |
+| Mk 24 Mod 5  |                     |         |                          |
+| Mk 24 Mod 34 |                     |         |                          |
+| Mk 25        |                     |         |            SR            |
+| Mk 36        |                     |         |            TR            |
+| Mk 37        |                     |         |                          |
+| Mk 49 Mod 0  |                     |         |                          |
+| Mk 49 Mod 1  |                     |         |                          |
+| Mk 50        |        (SR)         |         |           (SR)           |

@@ -23,6 +23,25 @@ relevant for the C++ to JS communication.
 The method `hb_send_proxy` is used to send commands to C++, such as notifying it
 that an action has been clicked.
 
+## Translations
+
+The wheel and all other HB UI elements support localization.
+See the subfolder `l10n` for details.
+
+Translations are provided through simple files via the language code, for example `l10n/cn.js`:
+
+```json
+translations["cn"] = {
+    "Press": "按下",
+    "UHF Radio": "UHF 电台",
+    "Radio": "电台",
+    ...
+}
+```
+
+> 💡 You can add translations for other languages by simply modifying one of the existing files
+> and then sending it to us. We will verify it and then gladly add it to the module! 👍
+
 ## Lua
 
 The wheel is essentially a menu-tree. Each menu consists of up to 8 items. An
@@ -80,7 +99,7 @@ Wheel.SetMenuInfo(current_waypoint, {"Navigation", "Select Waypoint"})
 To react to a selected action, listen to the corresponding event:
 
 ```lua
-ListenTo("select_tgt_1", function(task)
+ListenTo("select_tgt_1", "Navigation", function(task)
   -- Component interface
   task:Click("Nav Panel Function", "TARGET_1")
 

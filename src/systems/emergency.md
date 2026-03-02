@@ -38,8 +38,8 @@ the Telelight Panel list.
 MASTER CAUTION can be deactivated by the pilot pressing the reset button on the
 right console. However, it is important to note that pressing MASTER CAUTION
 does not clear a warning on the telelight panel; instead, the warning will
-remain until rectified. Should a second event occur in a system already giving a
-telelight warning, MASTER CAUTION will not illuminate a second time.
+remain until rectified. Should an additional event occur that requires attention,
+MASTER CAUTION will illuminate again.
 
 ### Warning Light Test Circuit
 
@@ -144,10 +144,10 @@ munitions, external tanks, and any pods subject to jettison. Sparrow and
 Sidewinder missiles, along with all pylons, will remain in place. Pushing the
 button will show the yellow paint inside its recess to confirm its actuation.
 Performing the actuation disengages external fuel tank transfer automatically,
-permitting proper flow of internal wing tanks without further pilot action. The
-button is active so long as the aircraft gear is up, or, in the event of a
-forward gear handle failure, so long as the rear gear handle remains IN, and
-weight is off wheels.
+permitting proper flow of internal wing tanks without further pilot action.
+
+The button is active so long as the aircraft gear handle is up, or,
+the ground safety override switch is depressed.
 
 ### Selective Jettison
 

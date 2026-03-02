@@ -17,13 +17,12 @@ PDF versions are available from the
 <!-- markdown-link-check-enable -->
 
 ## Setup
-
+<!-- markdown-link-check-disable -->
 Markdown is supported widely by most IDEs and text editors. We recommend
 [VSC](https://code.visualstudio.com/) and any JetBrains IDE, such as
-[Fleet](https://www.jetbrains.com/fleet/),
 [IntelliJ](https://www.jetbrains.com/idea/) or
 [CLion](https://www.jetbrains.com/clion/).
-
+<!-- markdown-link-check-enable -->
 You can also simply press `.` (dot) while on GitHub and it will open an instance
 of Visual Studio Code right in your browser, allowing you to contribute directly
 and conveniently.
@@ -46,8 +45,9 @@ browser at [localhost:3000](http://localhost:3000/), it automatically updates
 whenever the contents change.
 <!-- markdown-link-check-enable -->
 
-To build the PDF locally, use `cargo install mdbook-pdf` first. Then, when running `mdbook build`,
-the PDF will be created in `book/pdf`.
+To build the PDF locally, use
+`cargo install --git https://github.com/Heatblur-Simulations/mdbook-pdf` first.
+Then, when running `mdbook build`, the PDF will be created in `book/pdf`.
 
 ## GH Pages
 

@@ -48,6 +48,17 @@ generated, having this activated will scale down the generated force to improve
 handling precision, but also can help to prevent accidentally pulling extreme
 Gs.
 
+## Stick neutral position smoothing period
+
+Smooths forces applied by the aircraft systems that move the sticks neutral
+position (see
+[Bobweights vs. Bellows](../systems/flight_controls_gear/flight_controls.md#bobweights-vs-bellows)).
+The higher the selected time period, the less impact do these systems have on
+the sticks movements.
+
+This makes it easier for users of non-force-feedback hardware to react to sudden
+changes of the sticks neutral position and generally achieve more stable flight.
+
 ## AFCS Breakout Deadzone
 
 Percentage of stick input (separate for roll and pitch) after which the AFCS
@@ -103,6 +114,21 @@ altitude, similar as seen in civilian aviation.
 
 > 💡 Real Phantom WSOs did not assist during landing.
 
+## Persistent Aircraft (by livery and tail number)
+
+When checked, enables the aircraft persistence system.
+Allowing to save and load aircraft state across flights.
+
+The bind **Initialize Persistent Aircraft State** (<kbd>LCTRL</kbd>+<kbd>P</kbd>)
+is used initially to start tracking the current aircraft. Any subsequent mission
+flown with the same combination of livery and tail-number results in this particular
+aircraft being loaded again.
+
+See [9.6. Persistence](persistence.md) for details.
+
+> 💡 Mission authors can overrule this setting,
+> see [9.12. Mission Editor](mission_editor.md#persistent).
+
 ## HB UI
 
 ### Resolution Override
@@ -152,8 +178,27 @@ This file is automatically created at
 
 when launching the Phantom for the first time.
 
+> 💡 Deleting the file will lead to it being recreated on the next launch.
+> That way, one can have it updated to the newest set of rules -
+> should there have been any changes.
+
 Selecting **Offline** will disable the Virtual Browser and any other HB UI
 features and elements that require an active online connection.
+
+### Language
+
+Dropdown to select the language used for all HB UI elements. Available are:
+
+- English
+- Chinese (_中文_)
+- German (_Deutsch_)
+
+Affects for example the Jester UI, the Bombing Tool, but also the
+in-game version of this Manual and more.
+
+> 💡 If you are interested in making translations for other languages,
+> please head over to the [Modding Section](modding/jester/wheel_ui.md#translations),
+> thanks! 👍
 
 ### Theme
 
@@ -166,6 +211,18 @@ The default option **AUTO** will pick the theme dynamically based on the in-game
 time. Light during the day and Dark for a night mission.
 
 ## Jester UI
+
+### Animation Speed
+
+The value is applied as factor to certain animations in the Jester UI, such as
+the closing and opening of the wheel or the blinking when selecting an item.
+
+The default speed is given by `1.0`. Values above that speed up the animations,
+values below `1.0` slow it down. The allowed range is `0.01` to `1000`.
+
+> 💡 Using a value such as `1000` effectively disables the animations.
+> While negatively impacting the visual experience, this can help
+> if the UI does not feel responsive enough.
 
 ### Allow Mouse Controls
 
@@ -244,13 +301,21 @@ binding the two
 [Track Wheels](../cockpit/wso/right_console/center_section.md#along-track-wheel)
 obsolete.
 
-## FFB Gain
+## Force Feedback
+
+### Gain
 
 For users with force-feedback sticks, this setting can be used to adjust the
 gain of the forces per axis.
 
 The default setting is 100% for Roll and Pitch axis. Greater values will
 increase the force used by the stick, while smaller values will decrease it.
+
+### Force OFF
+
+When checked, the stick behavior will be that of a non-FFB stick. That is, even
+if there is a FFB stick connected or the "_Use FFB_" checkbox in the general DCS
+settings is checked.
 
 ## Lower Simulation Update Rate
 

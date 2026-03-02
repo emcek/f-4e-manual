@@ -12,7 +12,7 @@ regulator panel (<num>5</num>) and the slats and flaps indicators for the WSO (<
 
 ![wso_gun_cam_aal_video_select](../../img/wso_avtr_bar.jpg)
 
-The two position switch (<num>1</num>) activates recording of gun camera footage.
+The two-position switch (<num>1</num>) activates recording of gun camera footage.
 
 ## Air to Air Light
 
@@ -30,10 +30,10 @@ on the radar scope display when in TV mode.
 
 ## AVTR Control
 
-Controls the Airborne Video Tape recorder system which records the intercom
+Controls the Airborne Video Tape recorder system, which records the intercom
 sound, as well as the rear radar screen.
 
-For further information about the Recorder system see [9.6 Recorder](../../dcs/recorders.md).
+For further information about the Recorder system, see [9.6 Recorder](../../dcs/recorders.md).
 
 ### AVTR Switch
 
@@ -60,12 +60,12 @@ Lit (<num>4</num> upper half) to indicate the AVTR system currently recording.
 
 ![wso_emergency_handles](../../img/wso_emergency_handles.jpg)
 
-Deploys the landing gear using a pair of compressed air bottles; handle cannot
-retract gear, only deploy in an emergency.
+Deploys the landing gear using a pair of compressed air bottles; the handle cannot
+retract gear, only deploy it in an emergency.
 
 ## Emergency Brake Handle
 
-In an emergency, discharges a portion of the brake system hydraulic accumulator
+In an emergency, it discharges a portion of the brake system's hydraulic accumulator
 to provide emergency braking. Contains a limited number of applications.
 
 ## APX-80 Control Panel
@@ -81,8 +81,8 @@ for details.
 
 ### Code Buttons
 
-The first digit of the code display (<num>3</num>) indicates the current IFF mode, which can be
-either of:
+The first digit of the code display (<num>3</num>) indicates the current mode
+for the AN/APX-76 interrogator. It can be either of:
 
 - Off (white square)
 - Mode 1
@@ -94,28 +94,28 @@ either of:
 > 💡 In DCS, only Mode 4 (either A or B) is effective and can be used for
 > interrogation.
 
-The other four digits are used to set the IFF code to interrogate for Modes 1
+The other four digits are used to set the IFF code to interrogate for Mode 1
 to 3.
 
 The buttons below and above the display are used to decrement and increment the
-corresponding setting respectively.
+corresponding setting, respectively.
 
 ### Challenge Lamp
 
-This dimmable push-to-test lamp (<num>1</num>) illuminates to indicate IFF active interrogation
+This dimmable push-to-test lamp (<num>1</num>) illuminates to indicate active interrogation
 with the APX-76 system.
 
 ### Test/Challenge Code
 
-Switch (<num>2</num>) that, if set to OFF, turns off the APX-76 interrogation system. In the CHALLENGE
-position, it can be used to interrogate.
+Setting the switch (<num>2</num>) to the CHALLENGE position will send interrogation
+challenges by the AN/APX-76 system.
 
-TEST is used to test the system. If the lamp above lights up, the test was
-successful.
+TEST initiates a test of the system, see
+[AN/APX-76 Test](../../systems/identification_systems.md#test) for details.
 
 ### Anti-Jam
 
-This switch (<num>7</num>) could be used for anti jammer measurements on some systems, but was
+This switch (<num>7</num>) could be used for anti-jammer measurements on some systems, but was
 never installed and connected on this variant of the F-4E.
 
 ### Test/Challenge Lamp
@@ -125,15 +125,20 @@ with the APX-81A Combat-Tree system.
 
 ### Test Button
 
-The push button starts the built-in test of the APX-81A Combat-Tree system.
+The push button starts the built-in test of the APX-81A Combat-Tree system,
+see [AN_APX-81A Test](../../systems/identification_systems.md#self-test) for details.
 
 ### Mode 2
 
-This switch (<num>5</num>) is used to set Combat-Tree Mode 2 either in ACTIVE, PASSIVE or OFF types.
+This switch (<num>5</num>) is used to set Combat-Tree Mode 2 to either ACTIVE, PASSIVE or OFF types.
+
+The ACTIVE position is required to use the system.
 
 ### Mode 3
 
-This switch (<num>5</num>) is used to set Combat-Tree Mode 3 either in ACTIVE, PASSIVE or OFF types.
+This switch (<num>5</num>) is used to set Combat-Tree Mode 3 to either ACTIVE, PASSIVE or OFF types.
+
+The ACTIVE position is required to use the system.
 
 ### Mode 4
 
@@ -148,8 +153,8 @@ F-4E.
 
 ### Supply Lever
 
-Two position switch (<num>1</num>) (ON and OFF) activating flow of oxygen to the mask.
-For further information
+Two-position switch (<num>1</num>) (ON and OFF) activating flow of oxygen to the mask.
+For further information,
 see [3.7 Utility chapter, Oxygen section](../../systems/utility.md#oxygen-system).
 
 ### Diluter Lever
@@ -166,7 +171,7 @@ if fire, toxic smoke or fumes occur in the cockpit.
 
 ### Emergency Flow Control Switch
 
-Three position switch (<num>3</num>) which permits selection of NORMAL (standard supply),
+Three-position switch (<num>3</num>) which permits selection of NORMAL (standard supply),
 EMERGENCY pressure (100% oxygen with continuous positive pressure) or
 TEST MASK (positive pressure to test the face mask for leaks).
 
@@ -175,14 +180,14 @@ unless an unscheduled pressure increase is required.
 
 ### Flow Indicator
 
-Alternates (<num>4</num>) between black and white with each aircrew member breath to indicate
+Alternates (<num>4</num>) between black and white with each aircrew member's breath to indicate
 oxygen flow (white indicates inhalation).
 
 ### Oxygen Pressure Gauge
 
 Indicates (<num>5</num>) oxygen supply pressure from 0 to 500 psi.
 
-For further information
+For further information,
 see [3.7 Utility chapter, Oxygen section](../../systems/utility.md#oxygen-system).
 
 ## Landing Gear/Flap Indicator Panel
@@ -194,18 +199,18 @@ Displays current status of landing gear, flaps, and slat position.
 ### Landing Gear
 
 Status noted with the word UP (up), a barber pole illustration (in transition),
-or an icon of a wheel (down) relative to current position.
+or an icon of a wheel (down) relative to the current position.
 
 See the [3.1.3 Landing gear chapter](../../systems/flight_controls_gear/gear_ground_handling.md) for
 more information.
 
 ### Slats
 
-Status noted with the word IN and OUT.
+Status noted with the words IN and OUT.
 
 ### Flaps
 
-Status noted with the word UP (flaps up) or (DN) (down). When transitioning, may
+Status noted with the word UP (flaps up) or DN (down). When transitioning, it may
 show a barber pole illustration. When transitioning back to the UP position, the
 indicator does not change until the flaps are fully retracted.
 
